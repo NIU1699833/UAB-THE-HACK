@@ -132,9 +132,7 @@ tipo_fabricante = tipo_fabricante.sort_values('count', ascending=False).head(15)
 conexiones_hora = df_clients.groupby('hora').size()
 prediccion = conexiones_hora.rolling(window=3, center=True).mean()
 
-# -----------------------------
-# 3️⃣ Crear figura con subplots 2x2
-# -----------------------------
+#Crear figura con subplots 2x2
 fig, axes = plt.subplots(2, 2, figsize=(30, 24))
 fig.suptitle("Dashboard Creativo: WiFi Campus UAB", fontsize=20)
 
@@ -179,9 +177,7 @@ axes[1,1].legend()
 axes[1,1].grid(True)
 axes[1,1].set_xticks(range(0,24))
 
-# -----------------------------
-# 4️⃣ Ajustes finales
-# -----------------------------
+#Ajustes finales
 plt.tight_layout()
 plt.subplots_adjust(top=0.92)
 plt.show()
